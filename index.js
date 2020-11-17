@@ -11,13 +11,11 @@ function addParagraph() {
 }
 
 function createNewParagraph() {
-  let paragraph = document.createElement("p");
+  let paragraph = document.createElement("li");
   paragraph.classList.add('myParagraph');
   
   let colorNum = Math.floor(Math.random() * 3) + 1;
   paragraph.classList.add('paragraph_color_' + colorNum);
-  
-  //setRandomColor(paragraph);
   
   createParagraphText(paragraph);
   return paragraph;
@@ -42,8 +40,4 @@ function generateRandomColor() {
     color += letters[Math.floor(Math.random() * 16)];
   }
   return color;
-}
-
-function setRandomColor(element) {
-  element.style.color = generateRandomColor();
 }

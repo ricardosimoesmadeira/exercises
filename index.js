@@ -6,16 +6,29 @@ function addParagraph() {
   const paragraphSection = document.getElementById('sectionParagraph');
   
   let paragraph = createNewParagraph();
-  setRandomColor(paragraph);
+
   appendParagraph(paragraphSection, paragraph);
 }
 
 function createNewParagraph() {
   let paragraph = document.createElement("p");
-  let paragraphText = document.createTextNode("This is a new paragraph.");
-  paragraph.appendChild(paragraphText);
+  paragraph.classList.add('myParagraph');
+  
+  let colorNum = Math.floor(Math.random() * 3) + 1;
+  paragraph.classList.add('paragraph_color_' + colorNum);
+  
+  //setRandomColor(paragraph);
+  
+  createParagraphText(paragraph);
   return paragraph;
 }
+
+function createParagraphText(paragraph) {
+  var myParagraphs = document.getElementsByClassName("myParagraph");
+  let paragraphText = document.createTextNode("This is paragraph." + myParagraphs.length);
+  paragraph.appendChild(paragraphText);
+}
+
 
 function appendParagraph(parent, el) {
     return parent.appendChild(el);

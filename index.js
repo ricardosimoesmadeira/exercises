@@ -25,7 +25,8 @@ function createNewParagraph() {
 
 function createParagraphText(paragraph) {
   var myParagraphs = document.getElementsByClassName("myParagraph");
-  let paragraphText = document.createTextNode("This is paragraph." + myParagraphs.length);
+  let paragraphText = document.createTextNode("This is paragraph." + String.fromCharCode(65 + myParagraphs.length));
+  
   paragraph.appendChild(paragraphText);
 }
 
